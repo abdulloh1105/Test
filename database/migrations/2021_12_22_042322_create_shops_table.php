@@ -16,8 +16,8 @@ class CreateShopsTable extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment('Name of Shop');
-            $table->text('description')->comment('Description of Shop');
-            $table->enum('status', [0, 1])->comment('Status of Shop');
+            $table->text('description')->nullable()->comment('Description of Shop');
+            $table->integer('status')->comment('Status of Shop');
             $table->timestamps();
         });
     }

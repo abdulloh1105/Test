@@ -17,9 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name')->comment('Name of Product');
             $table->bigInteger('price')->comment('Price of Product');
-            $table->integer('shop_id')->comment('Shop of Product');
-            $table->text('description')->comment('Description of Product');
-            $table->enum('status', [0, 1])->comment('Status of Product');
+            $table->integer('shop_id')->index()->comment('Shop of Product');
+            $table->text('description')->nullable()->comment('Description of Product');
+            $table->integer('status')->comment('Status of Product');
             $table->timestamps();
         });
     }
